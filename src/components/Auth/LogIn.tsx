@@ -26,7 +26,7 @@ export const LogIn: React.FunctionComponent<IPageProps> = () => {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         logging.info(result);
-        navigate("/home");
+        navigate("/profile");
       })
       .catch((error) => {
         logging.error(error);

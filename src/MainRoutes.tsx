@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Register from "./components/Auth/Register";
 import LogIn from "./components/Auth/LogIn";
 import ProfilePage from "./pages/ProfilePage";
-import PhoneAuth from "./components/Auth/AuthWithPhoneNum/PhoneAuth";
 
 type RoutesType = {
   link: string;
@@ -15,7 +14,7 @@ const MainRoutes: React.FC = () => {
   const ROUTES: RoutesType[] = [
     {
       link: "/",
-      element: <PhoneAuth />,
+      element: <Register />,
       id: 1,
     },
   ];
@@ -24,10 +23,6 @@ const MainRoutes: React.FC = () => {
       {ROUTES.map((item) => (
         <Route path={item.link} element={item.element} key={item.id} />
       ))}
-      <Route
-        path="/register"
-        element={<Register location={undefined} name={""} />}
-      />
       <Route path="/login" element={<LogIn location={undefined} name={""} />} />
       <Route path="/profile" element={<ProfilePage />} />
     </Routes>
