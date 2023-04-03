@@ -4,6 +4,7 @@ import Register from "./components/Auth/Register";
 import LogIn from "./components/Auth/LogIn";
 import ProfilePage from "./pages/ProfilePage";
 import LogOutPage from "./components/Auth/LogOut";
+import ChatPage from "./pages/ChatPage";
 
 type RoutesType = {
   link: string;
@@ -26,6 +27,7 @@ const MainRoutes: React.FC = () => {
       ))}
       <Route path="/login" element={<LogIn location={undefined} name={""} />} />
       <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/chat" element={<ChatPage />} />
       <Route
         path="/logout"
         element={<LogOutPage location={undefined} name={""} />}

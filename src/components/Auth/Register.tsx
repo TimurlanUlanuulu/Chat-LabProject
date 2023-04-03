@@ -56,6 +56,7 @@ const Register: FC<IPageProps> = () => {
       }}
     >
       <img
+      className="img-crypto"
         src="https://cryptologos.cc/logos/chatcoin-chat-logo.png"
         alt="chatlogo"
       />

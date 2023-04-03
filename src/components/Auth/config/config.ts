@@ -12,3 +12,14 @@ const config = {
 };
 
 export default config;
+// const config = {
+//   firebase: {
+//     apiKey: "AIzaSyCL3sac552BOX6RUeqXWdpCM1dj4aPHupE",
+//     authDomain: "finalchat-c53d7.firebaseapp.com",
+//     projectId: "finalchat-c53d7",
+//     storageBucket: "finalchat-c53d7.appspot.com",
+//     messagingSenderId: "576620074969",
+//     appId: "1:576620074969:web:d735876d76bd7f5c846bc8",
+//   },
+// };
+// export default config;

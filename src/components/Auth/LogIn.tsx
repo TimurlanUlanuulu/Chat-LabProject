@@ -1,12 +1,14 @@
 import { Grid, TextField, Typography, Button } from "@mui/material";
 import "./auth.css";
 import FormControl from "@mui/material/FormControl";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../Auth/config/firebase";
 import IPageProps from "./interfaces/page";
 import logging from "./config/logging";
 import ErrorText from "./ErrorText";
+import { AuthContext } from "../../context/AuthContext";
+import { json } from "body-parser";
 
 // Sign In Form
 export const LogIn: React.FunctionComponent<IPageProps> = () => {
@@ -14,6 +16,8 @@ export const LogIn: React.FunctionComponent<IPageProps> = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+
+  const {setCurrentUser} = useContext<any>(AuthContext);
 
   const navigate = useNavigate();
 
@@ -24,11 +28,12 @@ export const LogIn: React.FunctionComponent<IPageProps> = () => {
 
     auth
       .signInWithEmailAndPassword(email, password)
-      .then((result) => {
+      .then((result: any) => {
         logging.info(result);
-        navigate("/profile");
+        localStorage.setItem("user", JSON.stringify(result.user))
+        navigate("/chat");
       })
-      .catch((error) => {
+      .catch((error: any) => {
         logging.error(error);
         setLogin(false);
         setError("");
@@ -45,6 +50,7 @@ export const LogIn: React.FunctionComponent<IPageProps> = () => {
       }}
     >
       <img
+      className="img-crypto"
         src="https://cryptologos.cc/logos/chatcoin-chat-logo.png"
         alt="chatlogo"
       />
@@ -84,7 +90,7 @@ export const LogIn: React.FunctionComponent<IPageProps> = () => {
 
       <Typography sx={{ margin: 3, fontSize: 13, fontWeight: "bold" }}>
         Don't have an account?
-        <Link to="/register">Register</Link>
+        <Link to="/">Register</Link>
       </Typography>
       <ErrorText error={error} />
     </Grid>
