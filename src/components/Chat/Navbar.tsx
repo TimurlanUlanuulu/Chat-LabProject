@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { auth } from '../Auth/config/firebase'
-import { AuthContext } from 'D:/JS/Chat/my-chat/src/context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const Navbar = () => {
     const {currentUser} = useContext(AuthContext);

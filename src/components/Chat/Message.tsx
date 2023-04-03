@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { AuthContext } from 'D:/JS/Chat/my-chat/src/context/AuthContext';
-import { ChatContext } from 'D:/JS/Chat/my-chat/src/context/ChatContext';
+import { AuthContext } from '../../context/AuthContext';
+import { ChatContext } from '../../context/ChatContext';
 
 interface MessageProps {
     message: any

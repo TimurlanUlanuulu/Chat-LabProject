@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import Clip from 'D:/JS/Chat/my-chat/src/img/clip.svg'
-import { AuthContext } from 'D:/JS/Chat/my-chat/src/context/AuthContext';
-import { ChatContext } from 'D:/JS/Chat/my-chat/src/context/ChatContext';
+import Clip from '../../img/clip.svg'
+import { AuthContext } from '../../context/AuthContext';
+import { ChatContext } from '../../context/ChatContext';
 import { Timestamp, arrayUnion, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import {db, storage} from "../Auth/config/firebase"
 import {v4 as uuid} from 'uuid'
