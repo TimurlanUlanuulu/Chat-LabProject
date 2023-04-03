@@ -1,9 +1,14 @@
 import React from 'react';
+import Sidebar from '../components/Chat/Sidebar';
+import Chat from '../components/Chat/Chat';
 
 const ChatPage = () => {
     return (
-        <div>
-            
+        <div className='home'>
+            <div className='container'>
+              <Sidebar/>
+              <Chat/>
+            </div>   
         </div>
     );
 };

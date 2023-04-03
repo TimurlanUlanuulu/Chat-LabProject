@@ -1,0 +1,21 @@
+import { signOut } from 'firebase/auth';
+import React, { useContext } from 'react';
+import { auth } from '../Auth/config/firebase'
+import { AuthContext } from 'D:/JS/Chat/my-chat/src/context/AuthContext';
+
+const Navbar = () => {
+    const {currentUser} = useContext(AuthContext);
+    
+    return (
+        <div className="navbar-wrapper"> 
+            {/* <span className="logo">Lama Chat</span> */}
+            <div className="user">
+                <img src={currentUser.photoURL} alt="" />
+                <span>{currentUser.displayName}</span>
+            </div>
+                <button onClick={() => signOut(auth)}>Logout</button>
+        </div>
+    );
+};
+
+export default Navbar;
